@@ -1,0 +1,10 @@
+body {
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 20px;
+    border: 10px solid red;
+    width: 20%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    
+}
