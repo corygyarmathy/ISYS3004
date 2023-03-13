@@ -24,3 +24,9 @@ body {
     background: grey;
     cursor: pointer;
 }
+
+.instruction {
+    text-align: center;
+    font-size: 60%;
+    margin: 50px;
+}
