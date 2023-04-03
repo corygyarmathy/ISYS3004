@@ -57,6 +57,23 @@ function addRSStoDOM(data) {
 let addFeedButton = document.getElementById("add-feed");
 let newRSSInput = document.getElementById("rss-input");
 
+// Getting main content element
+var mainContent = document.getElementsByTagName("main")[0];
+console.log(mainContent)
+mainContent.innerText("HI")
+// Creating XHR object
+var xhr = new XMLHttpRequest();
+xhr.onload = function() {
+  console.log("hi");
+  if (xhr.status >= 200 && xhr.status < 300) {
+    var json = JSON.parse(xhr.responseText)
+    console.log(json);
+  } else {
+    console.log("The request failed.");
+    mainContent.innerHTML("The request failed. Please check your RSS URL.")
+  }
+}
+
 /* Every time we add a task, save the task to local storage */
 function onAddRSSClicked(event) {
   let URL = newRSSInput.value;
