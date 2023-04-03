@@ -46,8 +46,8 @@ function addRSStoDOM(data) {
 
   // We have the RSS titles, and a container of article summaries
   // lets add them to the main DOM.
-  content.appendChild(titleElement);
-  content.appendChild(itemsContainer);
+  mainContent.appendChild(titleElement);
+  mainContent.appendChild(itemsContainer);
 }
 
 // The following gets the ADD RSS button to work.  This is a very similar
@@ -59,18 +59,17 @@ let newRSSInput = document.getElementById("rss-input");
 
 // Getting main content element
 var mainContent = document.getElementsByTagName("main")[0];
-console.log(mainContent)
-mainContent.innerText("HI")
+
 // Creating XHR object
 var xhr = new XMLHttpRequest();
 xhr.onload = function() {
-  console.log("hi");
   if (xhr.status >= 200 && xhr.status < 300) {
-    var json = JSON.parse(xhr.responseText)
-    console.log(json);
+    var jsonData = JSON.parse(xhr.responseText);
+    console.log(jsonData);
+    addRSStoDOM(jsonData);
   } else {
     console.log("The request failed.");
-    mainContent.innerHTML("The request failed. Please check your RSS URL.")
+    mainContent.innerHTML = "The request failed. Please check your RSS URL."
   }
 }
 
