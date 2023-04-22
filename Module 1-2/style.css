@@ -1,127 +1,93 @@
-/* This is about as simple and minimal as I can get the CSS but still "style"
-    the page.
+/* This is about as simple and minimal as I can get the CSS but
+    still "style" the page. 
 
-    When building a CSS this is the process I follow:
+    For the in-class demo this is the process I follow: 
       * style a element (perhaps one rule)
       * save document/CSS
       * open in browser, observe the effects
       * repeat until all elements styled
 
-    I follow a simple strategy for constructing the CSS, start form the
-    outermost container, top down, left to right.  This process is not critical
-    but the a work-flow makes sure all required elements are styled, and each
-    element once.
+    I follow a simple strategy for constructing the CSS, start
+    form the outermost container, top down, left to right.  This
+    process is not critical but gives students a workflow or a "checklist" 
+    they can follow to make sure they style all the elements they want.
 
-    Stylistic design is beyond the scope of this unit.  So generally keep it
-    simple, similar to not using every feature in MS-Word or MS-Excel.  Keep
-    things simple & consistent basic colour scheme, one (or two) fonts, all
-    links look the same etc.
-*/
+    Hopefully giving them a process to construct the CSS will make update
+    and additions cleaner (easiy to locate elements), and hopefully
+    stops elements being repeated the CSS (often causing problems).
 
-/* <body> is our outermost container, we could use <html>, but <body> tag is fine.
-No need to create a <div> wrapper or anything. Note that ALL inner elements will
-inherit from this styling.  Good place to put defaults, clear ALL margins etc
+    I mention some simple design concepts, but 'stylistic design' is 
+    beyond the scope of this unit.  So we keep it simple, consistent 
+    colour scheme, one (or two) fonts, links look the same etc. 
+    */
 
-A quick note a about colour.  Colours add to look and feel of page. But colour
-theory is beyond the scope of this unit. Keep the color palette simple, limit to
-2-4. If you find hex-colours confusing choose names from:
-https://en.wikipedia.org/wiki/Web_colors
-
-I look at online-tools later in the semester. Could choose a palette from one of
-the many online generators: https://coolors.co/
-*/
 body {
-  font-family: helvetica, sans-serif;
-  margin: 0 auto; /* center the image */
-  margin-top: 40px; /* move top of page down a little */
-  width: 60%; /* use 60% of the page, allows element to 'scale' proportionally */
-  max-width: 700px; /* avoid content overly stretching on high res monitors */
-  background-color: #fff;
-  border: 10px solid #044375; /* draw a solid boarder around the element */
-  padding: 10px; /* Shorthand for adding padding to each side of 'box':
-        10 top, 10 bottom, 10 left, 10 right.  Basically this means the contents of element
-        are not touching/on/against the boarder */
+  /* The outermost container, ALL inner elements will 
+        inherit from this styling.  Good place to put defaults, clear
+        ALL margins etc */
+  width: 700px; /* arbitrary choice, could do %, but px for now */
+  margin: 0 auto; /* centers the <body> within the page */
+  padding: 0;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
 }
 
-p {
-  /* lets make sure paragraphs have space around the text and not touching other elements */
-  margin: 2px;
-  padding: 3px;
-}
-
+/* Colours add to look and feel of page. Colour theory is beyond 
+      the scope of this unit. 
+      
+      Hex colours can be initially confusing so I have used names from: 
+          https://en.wikipedia.org/wiki/Web_colors 
+  
+      I have kept the color palette simple, 
+        * background either darkgray or light gray
+        * text either white or black.
+      
+      I look at online-tools later in the semester. Could choose a palette
+      from one of the many online generators: 
+          https://coolors.co/
+      */
 header {
-  height: 250px;
-  background-image: url("https://i.imgur.com/KjdQTqs.jpeg"); /* The image used */
-  background-color: #cccccc; /* Used if the image is unavailable */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  background-color: lightgray;
 }
 
 header h1 {
-  padding: 30px 0 30px 30px;
-  color: black;
-  font-weight: bolder; /* make text 'bold' */
-  letter-spacing: -1px; /* stylistic choice, there is a 'lot' you can control with CSS, Google for options */
+  height: 80px;
+  line-height: 80px;
 }
 
 nav {
-  margin: 10px 0 0 0;
+  background-color: darkgray;
+  text-align: left;
   padding: 10px;
-  background-color: #044375;
 }
 
 nav a {
-  color: #fff;
+  color: white; /* for consistency, make links the same */
+  text-align: center;
+  padding: 10px 16px; /* top-bottom padding must match <nav> */
   text-decoration: none;
 }
 
 nav a:hover {
-  /* Pseudo Class, nowhere in the document is there a 'id' or 'class' called 'hover'.
-    lets change the appearance a anchor link when we hover the mouse over the element.  You can
-    style 'hover' for any element, more common for anchor links which are used for navigation */
-  background-color: #ddd;
+  background-color: lightgray;
   color: black;
 }
 
-/* Floats can be confusing to understand.  The default is a 'vertical flow', from top to bottom,
-effectively limiting you to a single column layout.   Changing the width of an element isn't
-enough.  Floats allow you to change the flow to 'horizontal flow', so we can put block-level
-elements side-by-side. This allows us to build multicolumn pages-grids.
-
-Flexbox is the modern replacement, but floats have been used for over a decad and serve as the
-foundation for the majority of website.  As mentioned in lectures, teaching you basic but
-critical skills.  Floats hace limited options, making them a little easier learn compared to
-Flexbox (and CSS Grid).
-
-Generally we need a combination of floats and width rules. These are 'hints' to the browser
-as is builds/renders the page.  Issues can arise with overflow, if enough space available etc.
-The best option is to understand the basics, keep the website simple and experiment with
-different options. If you want to kow more, here is a good webapge on this:
-
-https://internetingishard.com/html-and-css/floats/
-*/
-
 #featured {
-  float: left; /* start at the left */
-  width: 100%; /* take up the complete 'row' */
+  background: lightgray;
+  float: left;
+  width: 200px;
 }
 
 #content {
-  float: left;
-  width: 65%;
+  float: right;
+  width: 500px;
 }
 
 #extras {
-  float: right;
-  width: 20%;
-}
-
-#extras h2 {
-  padding: 5px;
-  text-align: center;
-  font-weight: normal;
-  background-color: #eee;
+  background: lightgray;
+  float: left;
+  width: 200px;
 }
 
 #extras p {
@@ -130,13 +96,20 @@ https://internetingishard.com/html-and-css/floats/
   line-height: normal;
 }
 
-/* When we reach the footer, we are pretty much done/finished with our side-to-side flow
-and want to return to the defualt vertical flow.  To do this we 'clear' the flow, that is
-when we tell the block-element to ignore any floats that appear before.  So instead of flowing
-around the floated box, it now appears after the box.  That is we have "force" back to the
-default vertical flow. */
 footer {
-  clear: both; /* change back to vertical flow (default) */
-  padding: 10px;
-  background-color: #eee;
+  clear: both;
+  text-align: center;
+  background-color: darkgray;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+/* The following styling is not necessary, just pads a paragraph
+      left and right.  It is a simple way to show how you can make little 
+      design changes to a document. */
+p {
+  margin: 0 10px 10px;
 }
