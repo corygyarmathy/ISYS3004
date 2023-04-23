@@ -23,8 +23,8 @@ html {
 
 .profile_picture {
   object-fit: cover; /* Maintain aspect ratio and fill the container */
-  height: 100%;
   max-width: 200px;
+  width: 100%;
   margin: auto;
 }
 
