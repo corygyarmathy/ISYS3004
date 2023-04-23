@@ -47,6 +47,22 @@ html {
   width: 100%;
 }
 
+/* Style the text input field */
+input {
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
 /* Create three equal columns that floats next to each other */
 .column {
   padding: 5px;
