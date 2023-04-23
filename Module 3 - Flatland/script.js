@@ -1,14 +1,12 @@
-var square = document.getElementById('square');
+/* Name: script.js
+   Author: Cory Gyarmathy
+   Description: Scripting for Flatland
+   Version: 1.0
+*/
 
 function changeColour(colour) {
   square.style.background = colour;
 }
-
-square.addEventListener('click', (event) => changeColour('green'));
-
-/* create hover effect */
-square.addEventListener('mouseover', (event) => changeColour('gray'));
-square.addEventListener('mouseout', (event) => changeColour('red'));
 
 function createBuzzwordPhrase() {
   /* See https://en.wikipedia.org/wiki/List_of_buzzwords */
@@ -44,3 +42,25 @@ function createBuzzwordPhrase() {
 
   return buzz[idx_buz] + " " + action[idx_act] + " " + outcome[idx_out];
 }
+
+function greeting() {
+  words.innerHTML = "Welcome to Flatland. <br> I am Square.";
+}
+
+function clicked() {
+  let msg = "Build a<br>" + createBuzzwordPhrase();
+  words.innerHTML = msg;
+}
+
+/* Get elements from DOM tree */
+var square = document.getElementById("square");
+var words = document.getElementById("words");
+
+document.onload = greeting();
+
+/* create click effect */
+square.addEventListener("click", (event) => clicked());
+
+/* create hover effect */
+square.addEventListener("mouseover", (event) => changeColour("gray"));
+square.addEventListener("mouseout", (event) => changeColour("red"));
