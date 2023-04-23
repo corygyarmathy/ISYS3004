@@ -15,19 +15,6 @@ html {
   height: 200px;
 }
 
-.social_logo {
-  height: 20px;
-  margin: auto;
-  margin-top: 20px;
-}
-
-.profile_picture {
-  object-fit: cover; /* Maintain aspect ratio and fill the container */
-  height: 100%;
-  max-width: 200px;
-  margin: auto;
-}
-
 /* Style the header */
 .header {
   background-color: #f1f1f1;
@@ -44,6 +31,7 @@ html {
 /* Create three equal columns that floats next to each other */
 .column {
   padding: 5px;
+  flex: 1; /* Distribute available space equally among all divs */
   display: grid;
   place-items: start; /* Align items at the start (top left) of the grid container */
   grid-template-rows: min-content; /* First row height is determined by content, second row takes up remaining space */
@@ -66,6 +54,11 @@ html {
   text-decoration: none;
 }
 
+.column img {
+  object-fit: cover; /* Maintain aspect ratio and fill the container */
+  height: 100%;
+}
+
 .column p {
   margin-top: 0; /* Remove top margin */
   margin-bottom: 0.5em; /* Adjust the desired line spacing value */
@@ -79,8 +72,6 @@ html {
 
 .row {
   display: flex; /* Use flexbox */
-  width: 100%;
-  background-color: #bbb
 }
 
 /* Clear floats after the columns */
@@ -116,7 +107,6 @@ footer {
   .column {
     flex: none;
     width: 100%;
-    object-fit: cover; /* Maintain aspect ratio and fill the container */
   }
 }
 /* hero image reference: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_hero_image */
