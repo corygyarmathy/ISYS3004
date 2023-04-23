@@ -1,38 +1,10 @@
-/* This is about as simple and minimal as I can get the CSS but still "style"
-    the page.
-
-    When building a CSS this is the process I follow:
-      * style a element (perhaps one rule)
-      * save document/CSS
-      * open in browser, observe the effects
-      * repeat until all elements styled
-
-    I follow a simple strategy for constructing the CSS, start form the
-    outermost container, top down, left to right.  This process is not critical
-    but the a work-flow makes sure all required elements are styled, and each
-    element once.
-
-    Stylistic design is beyond the scope of this unit.  So generally keep it
-    simple, similar to not using every feature in MS-Word or MS-Excel.  Keep
-    things simple & consistent basic colour scheme, one (or two) fonts, all
-    links look the same etc.
+/* Name: style.css
+   Author: Cory Gyarmathy
+   Description: Styling for Module 2
+   Version: 1.0
 */
 
 
-
-
-/* <body> is our outermost container, we could use <html>, but <body> tag is fine.
-No need to create a <div> wrapper or anything. Note that ALL inner elements will
-inherit from this styling.  Good place to put defaults, clear ALL margins etc
-
-A quick note a about colour.  Colours add to look and feel of page. But colour
-theory is beyond the scope of this unit. Keep the color palette simple, limit to
-2-4. If you find hex-colours confusing choose names from:
-https://en.wikipedia.org/wiki/Web_colors
-
-I look at online-tools later in the semester. Could choose a palette from one of
-the many online generators: https://coolors.co/
-*/
 body {
     font-family: helvetica, sans-serif;
     margin: 0 auto;  /* center the image */

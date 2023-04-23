@@ -1,25 +1,8 @@
-/* This is about as simple and minimal as I can get the CSS but
-    still "style" the page. 
-
-    For the in-class demo this is the process I follow: 
-      * style a element (perhaps one rule)
-      * save document/CSS
-      * open in browser, observe the effects
-      * repeat until all elements styled
-
-    I follow a simple strategy for constructing the CSS, start
-    form the outermost container, top down, left to right.  This
-    process is not critical but gives students a workflow or a "checklist" 
-    they can follow to make sure they style all the elements they want.
-
-    Hopefully giving them a process to construct the CSS will make update
-    and additions cleaner (easiy to locate elements), and hopefully
-    stops elements being repeated the CSS (often causing problems).
-
-    I mention some simple design concepts, but 'stylistic design' is 
-    beyond the scope of this unit.  So we keep it simple, consistent 
-    colour scheme, one (or two) fonts, links look the same etc. 
-    */
+/* Name: style.css
+   Author: Cory Gyarmathy
+   Description: Styling for Module 1
+   Version: 1.0
+*/
 
 body {
   /* The outermost container, ALL inner elements will 
